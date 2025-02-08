@@ -1,0 +1,160 @@
+[gd_scene load_steps=12 format=3 uid="uid://bul0jwjf0futx"]
+
+[ext_resource type="Texture2D" uid="uid://dvwrye3w15kp8" path="res://sprites/main_sign.png" id="1_4db6y"]
+[ext_resource type="PackedScene" uid="uid://dn0ixvww1adk4" path="res://scenes/UI/main/sign/corners/msign_cornerTL.tscn" id="2_50pjk"]
+[ext_resource type="PackedScene" uid="uid://dt2iu4o4egvcd" path="res://scenes/UI/main/sign/corners/msign_cornerTR.tscn" id="3_iutci"]
+[ext_resource type="PackedScene" uid="uid://bplawuj3cblgp" path="res://scenes/UI/main/sign/corners/msign_cornerBL.tscn" id="4_6seik"]
+[ext_resource type="PackedScene" uid="uid://jylgb6bxc6k4" path="res://scenes/UI/main/sign/corners/msign_cornerBR.tscn" id="5_teijx"]
+[ext_resource type="PackedScene" uid="uid://dkw1qyf6016xd" path="res://scenes/UI/main/sign/edges/msign_edgeTI.tscn" id="6_u3spt"]
+[ext_resource type="PackedScene" uid="uid://4d8dd6jvjjir" path="res://scenes/UI/main/sign/edges/msign_edgeBI.tscn" id="7_tf6jk"]
+[ext_resource type="PackedScene" uid="uid://bu8v7x8cp5q8y" path="res://scenes/UI/main/sign/edges/msign_edgeLI.tscn" id="8_qrajr"]
+[ext_resource type="PackedScene" uid="uid://bw1vgqddywcw5" path="res://scenes/UI/main/sign/edges/msign_edgeRI.tscn" id="9_roykj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ve2sj"]
+atlas = ExtResource("1_4db6y")
+region = Rect2(776, 263, 196, 196)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6g12y"]
+
+[node name="Msign" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 684.0
+offset_bottom = 442.0
+
+[node name="Back" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 16.0
+offset_right = -15.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.9, 0.9)
+pivot_offset = Vector2(340, 221)
+texture = SubResource("AtlasTexture_ve2sj")
+
+[node name="Frame" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_right = 675.0
+offset_bottom = 442.0
+theme_override_constants/separation = -1
+
+[node name="Top" type="HBoxContainer" parent="Frame"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="MsignCornerTL" parent="Frame/Top" instance=ExtResource("2_50pjk")]
+layout_mode = 2
+
+[node name="MsignEdgeTI" parent="Frame/Top" instance=ExtResource("6_u3spt")]
+layout_mode = 2
+
+[node name="MsignEdgeTI2" parent="Frame/Top" instance=ExtResource("6_u3spt")]
+layout_mode = 2
+
+[node name="MsignEdgeTI3" parent="Frame/Top" instance=ExtResource("6_u3spt")]
+layout_mode = 2
+
+[node name="MsignEdgeTI4" parent="Frame/Top" instance=ExtResource("6_u3spt")]
+layout_mode = 2
+
+[node name="MsignEdgeTI5" parent="Frame/Top" instance=ExtResource("6_u3spt")]
+layout_mode = 2
+
+[node name="MsignEdgeTI6" parent="Frame/Top" instance=ExtResource("6_u3spt")]
+layout_mode = 2
+
+[node name="MsignEdgeTI7" parent="Frame/Top" instance=ExtResource("6_u3spt")]
+layout_mode = 2
+
+[node name="MsignEdgeTI8" parent="Frame/Top" instance=ExtResource("6_u3spt")]
+layout_mode = 2
+
+[node name="MsignCornerTR" parent="Frame/Top" instance=ExtResource("3_iutci")]
+layout_mode = 2
+
+[node name="Center" type="HBoxContainer" parent="Frame"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Left" type="VBoxContainer" parent="Frame/Center"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MsignEdgeLI" parent="Frame/Center/Left" instance=ExtResource("8_qrajr")]
+layout_mode = 2
+
+[node name="MsignEdgeLI2" parent="Frame/Center/Left" instance=ExtResource("8_qrajr")]
+layout_mode = 2
+
+[node name="MsignEdgeLI3" parent="Frame/Center/Left" instance=ExtResource("8_qrajr")]
+layout_mode = 2
+
+[node name="Space" type="Control" parent="Frame/Center"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Right" type="VBoxContainer" parent="Frame/Center"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="MsignEdgeRI" parent="Frame/Center/Right" instance=ExtResource("9_roykj")]
+layout_mode = 2
+
+[node name="MsignEdgeRI2" parent="Frame/Center/Right" instance=ExtResource("9_roykj")]
+layout_mode = 2
+
+[node name="MsignEdgeRI3" parent="Frame/Center/Right" instance=ExtResource("9_roykj")]
+layout_mode = 2
+
+[node name="Bottom" type="HBoxContainer" parent="Frame"]
+layout_mode = 2
+theme_override_constants/separation = -1
+
+[node name="MsignCornerBL" parent="Frame/Bottom" instance=ExtResource("4_6seik")]
+layout_mode = 2
+
+[node name="MsignEdgeBI" parent="Frame/Bottom" instance=ExtResource("7_tf6jk")]
+layout_mode = 2
+
+[node name="MsignEdgeBI2" parent="Frame/Bottom" instance=ExtResource("7_tf6jk")]
+layout_mode = 2
+
+[node name="MsignEdgeBI3" parent="Frame/Bottom" instance=ExtResource("7_tf6jk")]
+layout_mode = 2
+
+[node name="MsignEdgeBI4" parent="Frame/Bottom" instance=ExtResource("7_tf6jk")]
+layout_mode = 2
+
+[node name="MsignEdgeBI5" parent="Frame/Bottom" instance=ExtResource("7_tf6jk")]
+layout_mode = 2
+
+[node name="MsignEdgeBI6" parent="Frame/Bottom" instance=ExtResource("7_tf6jk")]
+layout_mode = 2
+
+[node name="MsignEdgeBI7" parent="Frame/Bottom" instance=ExtResource("7_tf6jk")]
+layout_mode = 2
+
+[node name="MsignEdgeBI8" parent="Frame/Bottom" instance=ExtResource("7_tf6jk")]
+layout_mode = 2
+
+[node name="MsignCornerBR" parent="Frame/Bottom" instance=ExtResource("5_teijx")]
+layout_mode = 2
+
+[node name="Text" type="Label" parent="."]
+layout_mode = 2
+offset_left = 99.0
+offset_top = 49.0
+offset_right = 584.0
+offset_bottom = 392.0
+size_flags_vertical = 1
+text = "Hello World!"
+label_settings = SubResource("LabelSettings_6g12y")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dt2iu4o4egvcd"]
+
+[ext_resource type="Texture2D" uid="uid://dvwrye3w15kp8" path="res://sprites/main_sign.png" id="1_ftgep"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xad8m"]
+atlas = ExtResource("1_ftgep")
+region = Rect2(591, 58, 150, 150)
+
+[node name="MsignCornerTR" type="Control"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 150.0
+offset_bottom = 150.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -150.0
+offset_bottom = 150.0
+grow_horizontal = 0
+texture = SubResource("AtlasTexture_xad8m")

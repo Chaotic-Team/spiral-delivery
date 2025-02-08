@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://c6fu7w2pl6rtn"]
+
+[ext_resource type="Texture2D" uid="uid://c65mv6qgslx6o" path="res://sprites/button_main.png" id="1_a40a1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jde36"]
+atlas = ExtResource("1_a40a1")
+region = Rect2(356, 9, 147, 98)
+
+[node name="MbtnPartII" type="Control"]
+custom_minimum_size = Vector2(147, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -49.0
+offset_right = 73.5
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_jde36")

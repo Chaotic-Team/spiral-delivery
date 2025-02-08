@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://djwqy3spssrb7"]
+
+[ext_resource type="PackedScene" uid="uid://b7jbwncisfuq7" path="res://scenes/UI/main/button/parts/mbtn_partL.tscn" id="1_e3fvq"]
+[ext_resource type="PackedScene" uid="uid://ga5yjjvqvxdj" path="res://scenes/UI/main/button/parts/mbtn_partI.tscn" id="2_bdjay"]
+[ext_resource type="Script" path="res://scripts/button.gd" id="2_qikdg"]
+[ext_resource type="PackedScene" uid="uid://c6fu7w2pl6rtn" path="res://scenes/UI/main/button/parts/mbtn_partII.tscn" id="4_f6xya"]
+[ext_resource type="PackedScene" uid="uid://dutym8thm33w1" path="res://scenes/UI/main/button/parts/mbtn_partR.tscn" id="5_ceaql"]
+[ext_resource type="FontFile" uid="uid://bel1xvlm60um6" path="res://Proetk_Regular.ttf" id="5_v83i2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1pepm"]
+
+[node name="Mbtn" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("2_qikdg")
+
+[node name="Textures" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 576.0
+offset_bottom = 150.0
+theme_override_constants/separation = -1
+
+[node name="MbtnPartL" parent="Textures" instance=ExtResource("1_e3fvq")]
+layout_mode = 2
+
+[node name="MbtnPartI" parent="Textures" instance=ExtResource("2_bdjay")]
+layout_mode = 2
+
+[node name="MbtnPartI2" parent="Textures" instance=ExtResource("2_bdjay")]
+layout_mode = 2
+
+[node name="MbtnPartII" parent="Textures" instance=ExtResource("4_f6xya")]
+layout_mode = 2
+
+[node name="MbtnPartI3" parent="Textures" instance=ExtResource("2_bdjay")]
+layout_mode = 2
+
+[node name="MbtnPartR" parent="Textures" instance=ExtResource("5_ceaql")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 43.0
+offset_top = 26.0
+offset_right = 529.0
+offset_bottom = 124.0
+theme_override_fonts/font = ExtResource("5_v83i2")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/focus = SubResource("StyleBoxEmpty_1pepm")
+text = "Press me"
+flat = true
+
+[connection signal="button_down" from="Button" to="." method="_on_button_down"]
+[connection signal="button_up" from="Button" to="." method="_on_button_up"]

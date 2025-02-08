@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://jylgb6bxc6k4"]
+
+[ext_resource type="Texture2D" uid="uid://dvwrye3w15kp8" path="res://sprites/main_sign.png" id="1_p40tv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r05jr"]
+atlas = ExtResource("1_p40tv")
+region = Rect2(591, 510, 150, 150)
+
+[node name="MsignCornerBR" type="Control"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -150.0
+offset_top = -150.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = SubResource("AtlasTexture_r05jr")

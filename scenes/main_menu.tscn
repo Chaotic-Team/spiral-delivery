@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxhy1jsvo4p0b"]
+
+[ext_resource type="Texture2D" uid="uid://bnblw81do8k58" path="res://sprites/main_menu_sketch.png" id="1_e3pee"]
+[ext_resource type="PackedScene" uid="uid://djwqy3spssrb7" path="res://scenes/UI/main/button/mbtn.tscn" id="2_t420t"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MainMenuSketch" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 1296.0
+grow_horizontal = 2
+texture = ExtResource("1_e3pee")
+expand_mode = 5
+
+[node name="Buttons" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 49.0
+offset_top = -97.0
+offset_right = 229.0
+offset_bottom = 361.0
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="PlayBtn" type="MarginContainer" parent="Buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_bottom = 150
+
+[node name="Mbtn" parent="Buttons/PlayBtn" instance=ExtResource("2_t420t")]
+layout_mode = 2
+
+[node name="Button" parent="Buttons/PlayBtn/Mbtn" index="1"]
+text = "Play"
+
+[node name="OptionsBtn" type="MarginContainer" parent="Buttons"]
+layout_mode = 2
+theme_override_constants/margin_left = 180
+theme_override_constants/margin_bottom = 150
+
+[node name="Mbtn" parent="Buttons/OptionsBtn" instance=ExtResource("2_t420t")]
+layout_mode = 2
+
+[node name="Button" parent="Buttons/OptionsBtn/Mbtn" index="1"]
+text = "Options"
+
+[node name="ExitBtn" type="MarginContainer" parent="Buttons"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 150
+
+[node name="Mbtn" parent="Buttons/ExitBtn" instance=ExtResource("2_t420t")]
+layout_mode = 2
+
+[node name="Button" parent="Buttons/ExitBtn/Mbtn" index="1"]
+text = "Exit"
+
+[editable path="Buttons/PlayBtn/Mbtn"]
+[editable path="Buttons/OptionsBtn/Mbtn"]
+[editable path="Buttons/ExitBtn/Mbtn"]
