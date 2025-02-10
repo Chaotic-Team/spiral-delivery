@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bf0uxcgs6gvoe"]
+
+[ext_resource type="Script" path="res://logic/BattleManager.cs" id="1_tbqmh"]
+[ext_resource type="PackedScene" uid="uid://dx730pysxuwix" path="res://scenes/character.tscn" id="2_t70sk"]
+
+[node name="Battle" type="Node2D"]
+script = ExtResource("1_tbqmh")
+_characterScene = ExtResource("2_t70sk")
