@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cusaamct2e03r"
-path="res://.godot/imported/blue_sign.png-b9352e5c5c9f19e15280c9b0a8462a02.ctex"
+uid="uid://dg3ddw2jsw63b"
+path="res://.godot/imported/healthbar.png-5d2d3b55a82b8e9326bceab4e5079976.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/blue_sign.png"
-dest_files=["res://.godot/imported/blue_sign.png-b9352e5c5c9f19e15280c9b0a8462a02.ctex"]
+source_file="res://sprites/UI/battle/healthbar.png"
+dest_files=["res://.godot/imported/healthbar.png-5d2d3b55a82b8e9326bceab4e5079976.ctex"]
 
 [params]
 

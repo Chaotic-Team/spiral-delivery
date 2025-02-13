@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bnblw81do8k58"
-path="res://.godot/imported/main_menu_sketch.png-00eed00990aa6d14eb9533e8d40963f9.ctex"
+uid="uid://dqperlvqws2x0"
+path="res://.godot/imported/spirals.png-b435c7178c13d27c6a6c7606f5920396.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/main_menu_sketch.png"
-dest_files=["res://.godot/imported/main_menu_sketch.png-00eed00990aa6d14eb9533e8d40963f9.ctex"]
+source_file="res://sprites/UI/battle/spirals.png"
+dest_files=["res://.godot/imported/spirals.png-b435c7178c13d27c6a6c7606f5920396.ctex"]
 
 [params]
 

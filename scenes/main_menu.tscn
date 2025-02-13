@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dxhy1jsvo4p0b"]
 
-[ext_resource type="Texture2D" uid="uid://bnblw81do8k58" path="res://sprites/main_menu_sketch.png" id="1_e3pee"]
+[ext_resource type="Texture2D" uid="uid://bnblw81do8k58" path="res://sprites/UI/main_menu_sketch.png" id="1_e3pee"]
 [ext_resource type="PackedScene" uid="uid://djwqy3spssrb7" path="res://scenes/UI/main/button/mbtn.tscn" id="2_t420t"]
 
 [node name="MainMenu" type="Control"]
