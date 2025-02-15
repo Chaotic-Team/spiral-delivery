@@ -1,7 +1,7 @@
 @tool
 extends Node
 
-@onready var current_skin := $AllySkin
+@onready var current_skin := $NormalSkin
 
 @export var value := 100.0:
 	set(val):
@@ -9,12 +9,12 @@ extends Node
 		if is_node_ready():
 			current_skin.value = val
 
-@export var enemy_skin := false:
-	set(is_enemy):
-		enemy_skin = is_enemy
+@export var corrupted_skin := false:
+	set(is_corrupted):
+		corrupted_skin = is_corrupted
 		if is_node_ready():
 			current_skin.visible = false;
-			current_skin = $EnemySkin if is_enemy else $CompanionSkin
+			current_skin = $CorruptedSkin if is_corrupted else $NormalSkin
 			current_skin.value = value
 			current_skin.visible = true;
 

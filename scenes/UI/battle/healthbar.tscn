@@ -36,8 +36,9 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_46df3")
 value = 60.0
+corrupted_skin = null
 
-[node name="CompanionSkin" type="TextureProgressBar" parent="."]
+[node name="NormalSkin" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -47,7 +48,7 @@ texture_over = SubResource("AtlasTexture_ma0m0")
 texture_progress = SubResource("AtlasTexture_yxo17")
 texture_progress_offset = Vector2(6, 8)
 
-[node name="EnemySkin" type="TextureProgressBar" parent="."]
+[node name="CorruptedSkin" type="TextureProgressBar" parent="."]
 visible = false
 layout_mode = 0
 offset_right = 40.0
