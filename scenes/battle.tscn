@@ -1,8 +1,16 @@
 [gd_scene load_steps=3 format=3 uid="uid://bf0uxcgs6gvoe"]
 
 [ext_resource type="Script" path="res://logic/BattleManager.cs" id="1_tbqmh"]
-[ext_resource type="PackedScene" uid="uid://dx730pysxuwix" path="res://scenes/character.tscn" id="2_t70sk"]
+[ext_resource type="PackedScene" uid="uid://g17ctl3wrpmv" path="res://scenes/characters/template_character.tscn" id="2_ttks1"]
 
-[node name="Battle" type="Node2D"]
+[node name="Battle" type="Node2D" node_paths=PackedStringArray("_leftSpawnPositions", "_rightSpawnPositions")]
 script = ExtResource("1_tbqmh")
-_characterScene = ExtResource("2_t70sk")
+_characterScene = ExtResource("2_ttks1")
+_leftSpawnPositions = [NodePath("Pos1")]
+_rightSpawnPositions = [NodePath("Pos2")]
+
+[node name="Pos1" type="Node2D" parent="."]
+position = Vector2(266, 500)
+
+[node name="Pos2" type="Node2D" parent="."]
+position = Vector2(840, 500)

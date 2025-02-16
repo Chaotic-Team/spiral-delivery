@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://g17ctl3wrpmv"]
+
+[ext_resource type="Script" path="res://logic/CharacterPresenter.cs" id="1_v12un"]
+[ext_resource type="PackedScene" uid="uid://b7cxcxw0418a2" path="res://scenes/UI/battle/character_status.tscn" id="1_xmpt5"]
+[ext_resource type="Texture2D" uid="uid://cswu7x2iegirh" path="res://sprites/chars_and_abilities_test.png" id="2_b26p2"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q36j"]
+atlas = ExtResource("2_b26p2")
+region = Rect2(1822, 161, 391, 627)
+
+[node name="TemplateCharacter" type="Node2D" node_paths=PackedStringArray("_sprite")]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_v12un")
+_sprite = NodePath("Content/Sprite2D")
+
+[node name="Content" type="Node2D" parent="."]
+position = Vector2(-201, -139)
+
+[node name="CharacterStatus" parent="Content" instance=ExtResource("1_xmpt5")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Content"]
+position = Vector2(201, -242)
+texture = SubResource("AtlasTexture_8q36j")
+
+[node name="TestPanel" type="Control" parent="Content"]
+layout_mode = 3
+anchors_preset = 0
+offset_top = 149.0
+offset_right = 403.0
+offset_bottom = 285.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Content/TestPanel"]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+theme_override_constants/separation = 10
+
+[node name="DamageBtn" type="Button" parent="Content/TestPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test Damage"
+
+[node name="HealBtn" type="Button" parent="Content/TestPanel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Test Heal"
+
+[connection signal="HealthChanged" from="." to="Content/CharacterStatus" method="update_health"]
+[connection signal="pressed" from="Content/TestPanel/HBoxContainer/DamageBtn" to="." method="TestDamage"]
+[connection signal="pressed" from="Content/TestPanel/HBoxContainer/HealBtn" to="." method="TestHeal"]

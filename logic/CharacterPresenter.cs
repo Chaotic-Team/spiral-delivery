@@ -7,23 +7,24 @@ public partial class CharacterPresenter : Node
 
     private Character? _character;
 
-    public void Init(Character c)
-    {
-        Name = c.Name;
-        c.HealthChanged += (_, val) => EmitSignal(SignalName.HealthChanged, val);
+    private Character Character => _character ?? throw new InvalidOperationException("Character isn't set.");
 
-        var testBtn = new Button { Text = "Test Damage" };
-        testBtn.Pressed += () => TestDamage();
-        AddChild(testBtn);
+    [Export] private Sprite2D? _sprite;
+
+    public void Init(Character c, bool flip = false)
+    {
+        if (_sprite == null)
+            throw new InvalidOperationException("Sprite isn't set.");
+
+        _sprite.FlipH = flip;
+
+        EmitSignal(SignalName.HealthChanged, c.Health);
+        c.HealthChanged += (_, val) => EmitSignal(SignalName.HealthChanged, val);
 
         _character = c;
     }
 
-    private void TestDamage()
-    {
-        if (_character == null)
-            throw new InvalidOperationException("Character isn't set.");
+    public void TestDamage() => Character.Health -= 10;
 
-        _character.Health -= 1;
-    }
+    public void TestHeal() => Character.Health += 10;
 }
