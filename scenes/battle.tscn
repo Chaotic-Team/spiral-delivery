@@ -1,16 +1,71 @@
-[gd_scene load_steps=3 format=3 uid="uid://bf0uxcgs6gvoe"]
+[gd_scene load_steps=6 format=3 uid="uid://bf0uxcgs6gvoe"]
 
 [ext_resource type="Script" path="res://logic/BattleManager.cs" id="1_tbqmh"]
-[ext_resource type="PackedScene" uid="uid://g17ctl3wrpmv" path="res://scenes/characters/template_character.tscn" id="2_ttks1"]
+[ext_resource type="PackedScene" uid="uid://bnwb88pej7k01" path="res://scenes/characters/nitronic.tscn" id="2_0ylt5"]
+[ext_resource type="Texture2D" uid="uid://dc2cv27s3pqar" path="res://sprites/bg_test_1.png" id="3_60nnj"]
+[ext_resource type="PackedScene" uid="uid://rsahx51j6131" path="res://scenes/characters/dirtstomp.tscn" id="3_v33h0"]
+[ext_resource type="Texture2D" uid="uid://cdej74hi0euvr" path="res://sprites/bg_test_2.png" id="4_r3j0y"]
 
 [node name="Battle" type="Node2D" node_paths=PackedStringArray("_leftSpawnPositions", "_rightSpawnPositions")]
 script = ExtResource("1_tbqmh")
-_characterScene = ExtResource("2_ttks1")
-_leftSpawnPositions = [NodePath("Pos1")]
-_rightSpawnPositions = [NodePath("Pos2")]
+_characterScene = ExtResource("2_0ylt5")
+_enemyScene = ExtResource("3_v33h0")
+_leftSpawnPositions = [NodePath("Positions/Left/Pos1"), NodePath("Positions/Left/Pos2"), NodePath("Positions/Left/Pos3"), NodePath("Positions/Left/Pos4"), NodePath("Positions/Left/Pos5")]
+_rightSpawnPositions = [NodePath("Positions/Right/Pos1"), NodePath("Positions/Right/Pos2"), NodePath("Positions/Right/Pos3"), NodePath("Positions/Right/Pos4"), NodePath("Positions/Right/Pos5")]
+metadata/_edit_vertical_guides_ = [-530.0]
 
-[node name="Pos1" type="Node2D" parent="."]
-position = Vector2(266, 500)
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(699, 576)
+zoom = Vector2(3, 3)
 
-[node name="Pos2" type="Node2D" parent="."]
-position = Vector2(840, 500)
+[node name="Background" type="Node" parent="."]
+
+[node name="BgTest1" type="Sprite2D" parent="Background"]
+z_index = -10
+position = Vector2(1028.57, 540)
+scale = Vector2(0.514286, 0.514286)
+texture = ExtResource("3_60nnj")
+
+[node name="BgTest2" type="Sprite2D" parent="Background"]
+z_index = 1
+position = Vector2(1028.57, 540)
+scale = Vector2(0.514286, 0.514286)
+texture = ExtResource("4_r3j0y")
+
+[node name="Positions" type="Node" parent="."]
+
+[node name="Left" type="Node2D" parent="Positions"]
+position = Vector2(120, 0)
+
+[node name="Pos1" type="Node2D" parent="Positions/Left"]
+position = Vector2(0, 710)
+
+[node name="Pos2" type="Node2D" parent="Positions/Left"]
+position = Vector2(175, 710)
+
+[node name="Pos3" type="Node2D" parent="Positions/Left"]
+position = Vector2(350, 710)
+
+[node name="Pos4" type="Node2D" parent="Positions/Left"]
+position = Vector2(525, 710)
+
+[node name="Pos5" type="Node2D" parent="Positions/Left"]
+position = Vector2(700, 710)
+
+[node name="Right" type="Node2D" parent="Positions"]
+position = Vector2(1100, 0)
+
+[node name="Pos1" type="Node2D" parent="Positions/Right"]
+position = Vector2(0, 710)
+
+[node name="Pos2" type="Node2D" parent="Positions/Right"]
+position = Vector2(175, 710)
+
+[node name="Pos3" type="Node2D" parent="Positions/Right"]
+position = Vector2(350, 710)
+
+[node name="Pos4" type="Node2D" parent="Positions/Right"]
+position = Vector2(525, 710)
+
+[node name="Pos5" type="Node2D" parent="Positions/Right"]
+position = Vector2(700, 710)

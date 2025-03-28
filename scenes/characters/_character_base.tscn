@@ -1,28 +1,31 @@
-[gd_scene load_steps=5 format=3 uid="uid://g17ctl3wrpmv"]
+[gd_scene load_steps=4 format=3 uid="uid://g17ctl3wrpmv"]
 
 [ext_resource type="Script" path="res://logic/CharacterPresenter.cs" id="1_v12un"]
 [ext_resource type="PackedScene" uid="uid://b7cxcxw0418a2" path="res://scenes/UI/battle/character_status.tscn" id="1_xmpt5"]
-[ext_resource type="Texture2D" uid="uid://cswu7x2iegirh" path="res://sprites/chars_and_abilities_test.png" id="2_b26p2"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8q36j"]
-atlas = ExtResource("2_b26p2")
-region = Rect2(1822, 161, 391, 627)
+[sub_resource type="GDScript" id="GDScript_b0n24"]
+script/source = "extends Area2D
 
-[node name="TemplateCharacter" type="Node2D" node_paths=PackedStringArray("_sprite")]
-scale = Vector2(0.5, 0.5)
+func _on_mouse_entered():
+	$CharacterStatus.update_selection(Enums.CharacterSelection.WHITE)
+
+func _on_mouse_exited():
+	$CharacterStatus.update_selection(Enums.CharacterSelection.NONE)
+"
+
+[node name="CharacterBase" type="Node2D"]
+scale = Vector2(0.4, 0.4)
 script = ExtResource("1_v12un")
-_sprite = NodePath("Content/Sprite2D")
 
-[node name="Content" type="Node2D" parent="."]
+[node name="Content" type="Area2D" parent="."]
 position = Vector2(-201, -139)
+script = SubResource("GDScript_b0n24")
 
 [node name="CharacterStatus" parent="Content" instance=ExtResource("1_xmpt5")]
-
-[node name="Sprite2D" type="Sprite2D" parent="Content"]
-position = Vector2(201, -242)
-texture = SubResource("AtlasTexture_8q36j")
+z_index = -1
 
 [node name="TestPanel" type="Control" parent="Content"]
+z_index = 2
 layout_mode = 3
 anchors_preset = 0
 offset_top = 149.0
@@ -48,5 +51,7 @@ size_flags_horizontal = 3
 text = "Test Heal"
 
 [connection signal="HealthChanged" from="." to="Content/CharacterStatus" method="update_health"]
+[connection signal="mouse_entered" from="Content" to="Content" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Content" to="Content" method="_on_mouse_exited"]
 [connection signal="pressed" from="Content/TestPanel/HBoxContainer/DamageBtn" to="." method="TestDamage"]
 [connection signal="pressed" from="Content/TestPanel/HBoxContainer/HealBtn" to="." method="TestHeal"]

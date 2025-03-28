@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bnwb88pej7k01"]
+
+[ext_resource type="PackedScene" uid="uid://g17ctl3wrpmv" path="res://scenes/characters/_character_base.tscn" id="1_gw148"]
+[ext_resource type="Texture2D" uid="uid://cswu7x2iegirh" path="res://sprites/chars_and_abilities_test.png" id="2_exu82"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdwvd"]
+atlas = ExtResource("2_exu82")
+region = Rect2(1822, 161, 391, 627)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yl8ew"]
+size = Vector2(407.5, 627.5)
+
+[node name="Nitronic" node_paths=PackedStringArray("_sprite") instance=ExtResource("1_gw148")]
+_sprite = NodePath("Content/Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="Content" index="2"]
+position = Vector2(201, -242)
+texture = SubResource("AtlasTexture_vdwvd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Content" index="3"]
+position = Vector2(202.25, -242.25)
+shape = SubResource("RectangleShape2D_yl8ew")

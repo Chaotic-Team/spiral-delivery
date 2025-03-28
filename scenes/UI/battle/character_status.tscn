@@ -6,6 +6,10 @@
 [sub_resource type="GDScript" id="GDScript_isy8i"]
 script/source = "extends Control
 
+func _ready():
+	update_selection(Enums.CharacterSelection.NONE)
+
+
 func update_health(val: float):
 	$Healthbar.value = val
 
@@ -118,6 +122,7 @@ offset_bottom = 75.0
 script = SubResource("GDScript_uy11v")
 
 [node name="NormalSkin" type="TextureProgressBar" parent="Healthbar"]
+z_index = 2
 layout_mode = 0
 offset_right = 404.0
 offset_bottom = 64.0
@@ -129,6 +134,7 @@ texture_progress_offset = Vector2(6, 8)
 
 [node name="CorruptedSkin" type="TextureProgressBar" parent="Healthbar"]
 visible = false
+z_index = 2
 layout_mode = 0
 offset_right = 404.0
 offset_bottom = 64.0
@@ -139,6 +145,7 @@ texture_progress = SubResource("AtlasTexture_gtbw8")
 texture_progress_offset = Vector2(6, 8)
 
 [node name="SelectionSpiral" type="Control" parent="."]
+z_index = -1
 anchors_preset = 0
 offset_left = 3.0
 offset_right = 3.0

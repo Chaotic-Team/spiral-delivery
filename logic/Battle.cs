@@ -10,8 +10,11 @@ public class Battle
 
     public void Init()
     {
-        FirstTeam.Add(new Character("First dude"));
-        SecondTeam.Add(new Character("Second dude"));
+        for (var i = 0; i < 5; i++)
+        {
+            FirstTeam.Add(new Character($"First team {i} dude"));
+            SecondTeam.Add(new Character($"Second team {i} dude"));
+        }
 
         Initialized?.Invoke(this, EventArgs.Empty);
     }
